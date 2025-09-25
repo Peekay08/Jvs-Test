@@ -5,33 +5,36 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
-rl.question('Input the first number ', (answer) => {
-  console.log(`Hello, ${answer}!`);
-  rl.close();
-});
+let x, y;
 
+rl.question('Enter the first number: ', (answer1) => {
+  x = parseFloat(answer1);
 
-let x = prompt("please enter the first number:");
-let y;
+  rl.question('Enter the second number: ', (answer2) => {
+    y = parseFloat(answer2);
 
-function multiplication() {
-    return x * y;
+      function multiplication() {
+    return x + " * " + y + " = " + x*y;
 }
 
 function addition() {
-    return x + y;
+    return x + " + " + y + " = " + x+y;
 }
 
 function modulo() {
-    return x % y;
+    return x + " % " + y + " = " + x%y;
 }
 
 function subtraction() {
-    return x - y;
+    if (x<y) {
+        return x + " - " + y + " = " + "-" + y-x;
+    } else {
+        return x + " - " + y + " = " + x-y;
+    }
 }
 
 function division() {
-    return x / y;
+    return x + " / " + y + " = " + x/y;
 }
 
 console.log(multiplication());
@@ -39,3 +42,6 @@ console.log(addition());
 console.log(modulo());
 console.log(subtraction());
 console.log(division());
+    rl.close();
+  });
+});

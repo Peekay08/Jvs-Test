@@ -27,9 +27,11 @@ function modulo() {
 
 function subtraction() {
     if (x<y) {
-        return x + " - " + y + " = " + "-" + y-x;
+      let z = y-x;
+        return x + " - " + y + " = " + "-" + z;
     } else {
-        return x + " - " + y + " = " + x-y;
+      let z = x-y;
+        return x + " - " + y + " = " + z;
     }
 }
 
